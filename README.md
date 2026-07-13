@@ -13,4 +13,4 @@ In its current state, Mitoconfig is certainly not ready for actual usage and bug
 In future it would also be great if this project could be ported to more places than just my current AUR plans.
 
 > [!IMPORTANT]
-> This project is **entirely WIP**! During this phase, it is **guaranteed** things will **NOT** work as expected.
+> This project is **entirely WIP**! During this phase, it is **guaranteed** that things will **NOT** work as expected.
