@@ -1,4 +1,7 @@
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/caela-uk/mitoconfig/blob/main/LICENCE.md)
+[![GitHub](https://img.shields.io/badge/mitoconifg-label?style=for-the-badge&logo=github&logoColor=white&label=github&color=blue)](https://github.com/caela-uk/mitoconfig/)
+[![MIT License](https://img.shields.io/badge/MIT-label?style=for-the-badge&logoColor=white&label=licence&color=green)](https://github.com/caela-uk/mitoconfig/blob/main/LICENCE.md)
+![Work in Progress](https://img.shields.io/badge/Work_in_Progress-label?style=for-the-badge&logo=linux&logoColor=white&color=red)
+
 
 **Mitoconfig** is a **work-in-progress**, open-source configuration management tool designed to make editing, backing up and reproducing/sharing configurations much easier.
 
