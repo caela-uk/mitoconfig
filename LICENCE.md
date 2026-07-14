@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright © 2026: caela.uk
+Copyright © 2026 [caela.uk](https://github.com/caela-uk)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
