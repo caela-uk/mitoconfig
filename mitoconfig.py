@@ -88,7 +88,7 @@ def do_tracked(args):
 
 
 def do_backup(args):
-    # quick backup, might even do it to .cache or something because it's not made to last indefinitely and should be cleared every now and then
+    # quick backup, might even do data to .cache or something because it's not made to last indefinitely and should be cleared every now and then
     if not args:
         print("error: please specify a target")
         return
