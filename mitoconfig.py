@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import os
 
 
 def main():
@@ -42,6 +43,7 @@ def print_help():
     CYAN = "\033[36m"
     BOLD = "\033[1m"
     RST = "\033[0m" # clear formatting
+    EDITOR = os.environ.get('VISUAL') or os.environ.get('EDITOR') or 'nano'
 
     print(f"{GREEN}Mitoconfig{RST} is a {BOLD}WIP{RST} configuration management tool designed to make editing, backing up and reproducing/sharing configurations much easier.\n")
 
@@ -51,7 +53,7 @@ def print_help():
 
     print(f"{BOLD}Mitoconfig Commands{GREEN}:\n")
     print(f"  {GREEN}tracked{RST}                View or edit your tracked file, containing all tracked config/data items")
-    print(f"  {GREEN}edit{RST} <NAME>            Open a tracked shortcut (files edit with $EDITOR, directories run cd and ls)")
+    print(f"  {GREEN}edit{RST} <NAME>            Open a tracked shortcut (files edit with {EDITOR}, directories run cd and ls)")
     print(f"  {GREEN}backup{RST} <TARGETS>       Create a fast and temporary backup of a tracked target")
     print(f"  {GREEN}vial{RST} <TARGETS> [PATH]  Seal targeted tracked items into a portable {CYAN}.mito{RST} file")
     print(f"  {GREEN}spore{RST} <PATH/URL>       Deploy a {CYAN}.mito{RST} vial, reconstructing its files onto your system\n")
