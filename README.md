@@ -6,7 +6,7 @@
 **Mitoconfig** is a **work-in-progress**, open-source configuration management tool designed to make editing, backing up and reproducing/sharing configurations much easier.
 > and faster!
 
-This is a small hobby project named after the biological process of **mitosis**. It is something that I have found myself needing time and time again whilst moving between systems and Linux distributions, or just generally working on configs *(oh my, backups and shortcuts are **sooo** necessary on the daily)*
+This is a small hobby project named after the biological process of **mitosis**. It is something that I have found myself needing time and time again whilst moving between systems and Linux distributions, or just generally working on configs *(oh my, backups and shortcuts are **soooo** necessary on the daily)*
 
 <details>
 <summary>Mitoconfig Feature Roadmap</summary>

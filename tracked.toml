@@ -1,0 +1,46 @@
+# Mitoconfig Tracked File TOML Example
+# Some example use cases (change these):
+
+[hyprland]
+alias = "hypr"
+path = "~/.config/hypr/hyprland.lua"
+type = "config" # simple config file that should not contain sensitive data
+
+
+[cpupower] # sets CPU clock speeds, something unique to each processor
+path = "/etc/default/cpupower-service.conf"
+type = "config"
+post_edit = "sudo systemctl restart cpupower"
+this_machine_only = true
+# ^^ the above tag means there is no housefire when moved to another machine, just for an example
+
+
+[firedog] # example browser
+path = "~/.config/mozzarella/firedog/"
+type = "data"
+# ^^ set to data, because a browser contains sensitive data you wouldn't always want to copy, is also very storage heavy with caches and everything
+
+
+[fish]
+path = "~/.config/fish/config.fish"
+type = "config"
+post_edit = "fish" # the commmand "fish" here would reload fish after editing config
+
+
+[obs-studio]
+alias = "obs"
+path = "~/.config/obs-studio/"
+type = "data" # could contain stream keys you don't want to share, so mark it off as data for safety
+
+
+# Please Note:
+#
+# - You MUST specify whether a tracked item is config or data, this is necessary for security and saving storage space during the creation of backups/vials
+#
+# - An alias is an alternative name for an item, so for example with the default configuration: 'config hyprland' and 'config hypr' would both edit the same file.
+#
+# - You can wrap a 'post_edit' script to run directly after exiting your editor, this is useful for reloading services or shells, just for example.
+#
+# - If 'this_machine_only' is equal to 'true' on an item, when putting your configurations into a vial it would ALWAYS exclude that specific item.
+#   Useful for machine-specific tweaks (like setting your CPU frequency) that would definitely screw with other computers if copied over.
+#
