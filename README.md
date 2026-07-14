@@ -6,22 +6,23 @@
 **Mitoconfig** is a **work-in-progress**, open-source configuration management tool designed to make editing, backing up and reproducing/sharing configurations much easier.
 > and faster!
 
-This is a small hobby project named after the biological process of **mitosis**. It is something that I have found myself needing time and time again whilst moving between systems and Linux distributions, or just generally working on configs *(oh my, backups and shortcuts are **soooo** necessary on the daily)*
+This is a small hobby project named after the biological process of **mitosis**. It is something that I have found myself needing time and time again whilst moving between systems and Linux distributions, or just generally working on configs *(oh my, shortcuts and backups are **soooo** necessary on the daily)*
 
 <details>
 <summary>Mitoconfig Feature Roadmap</summary>
 
 ## Roadmap
-
+### Core
 - [x] Basic argument handling and help page
-- [ ] Read tracked items from TOML
-- [ ] Edit config file shortcuts
+- [x] Read tracked items from TOML
+- [x] Edit any config file with shortcuts
 - [ ] Working backup and restoration system
-- [ ] Vial functionality and .mito archive format
-- [ ] Safe spore functionality with warnings
+- [ ] Vial/Spore functionality and .mito archive format
 - [ ] Set up compilation and building with nuitka (?)
 - [ ] Publish to the AUR
-- [ ] Expand out to more repositories and platforms
+
+### Future (?)
+- [ ] Releases for more repositories and platforms
 - [ ] Mitosys module for reproducing package installations and more across (Linux/UNIX) systems (?)
 - [ ] Services for automatic backups and (?) cross-system syncing
 </details>

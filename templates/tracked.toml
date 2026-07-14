@@ -12,7 +12,7 @@ path = "/etc/default/cpupower-service.conf"
 type = "config"
 post_edit = "sudo systemctl restart cpupower"
 this_machine_only = true
-# ^^ the above tag means there is no housefire when moved to another machine, just for an example
+# ^^ the above tagging means there is no housefire when moved to another machine, just for an example
 
 
 [firedog] # example browser
@@ -30,7 +30,7 @@ post_edit = "fish" # the commmand "fish" here would reload fish after editing co
 [obs-studio]
 alias = "obs"
 path = "~/.config/obs-studio/"
-type = "data" # could contain stream keys you don't want to share, so mark it off as data for safety
+type = "data" # could contain stream keys you wouldn't want to share, so mark it off as data for safety
 
 
 # Please Note:
