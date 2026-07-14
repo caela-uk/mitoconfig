@@ -8,6 +8,7 @@ def main():
 
     # son😭
     if "--help" in args or "-h" in args or "help" in args:
+        print()
         print_help()
         return
     elif not args:
@@ -34,22 +35,38 @@ def main():
 
 
 def print_help():
-    # usage and help screen - in future add documentation link and descriptions from plan.md
-    print("Usage:")
-    print("  mitoconfig edit [NAME]")
-    print("  mitoconfig tracked")
-    print("  mitoconfig backup [TARGET/S]")
-    print("  mitoconfig backup restore [TARGET/S]")
-    print("  mitoconfig backup kill [TARGET/S]")
-    print("  mitoconfig backup clear")
-    print("  mitoconfig vial [TARGET/S] [PATH]")
-    print("  mitoconfig spore [PATH/URL]")
-    print("\nFlags:")
-    print("  --help, -h")
-    print("  --all, -a")
-    print("  --configs, -c")
-    print("  --data, -d")
-    print("  --yes, -y")
+    # prints this big help message - in future I should add a link to documentation
+
+    # tuff colours
+    GREEN = "\033[32m"
+    CYAN = "\033[36m"
+    BOLD = "\033[1m"
+    RST = "\033[0m" # clear formatting
+
+    print(f"{GREEN}Mitoconfig{RST} is a {BOLD}WIP{RST} configuration management tool designed to make editing, backing up and reproducing/sharing configurations much easier.\n")
+
+    print(f"{BOLD}Usage{GREEN}:{RST}\n")
+    print(f"  mitoconfig {GREEN}<command>{RST} [arguments]/[flags]\n")
+    print(f"  config {GREEN}<TARGET>{RST}      \\  Simple but fast and useful shortcut for 'mitoconfig edit'\n")
+
+    print(f"{BOLD}Mitoconfig Commands{GREEN}:\n")
+    print(f"  {GREEN}tracked{RST}                View or edit your tracked file, containing all tracked config/data items")
+    print(f"  {GREEN}edit{RST} <NAME>            Open a tracked shortcut (files edit with $EDITOR, directories run cd and ls)")
+    print(f"  {GREEN}backup{RST} <TARGETS>       Create a fast and temporary backup of a tracked target")
+    print(f"  {GREEN}vial{RST} <TARGETS> [PATH]  Seal targeted tracked items into a portable {CYAN}.mito{RST} file")
+    print(f"  {GREEN}spore{RST} <PATH/URL>       Deploy a {CYAN}.mito{RST} vial, reconstructing its files onto your system\n")
+
+    print(f"{BOLD}Backup Subcommands{GREEN}:\n")
+    print(f"  {GREEN}backup restore{RST} <TARGS>  Replace active configs/data items with their backup variants")
+    print(f"  {GREEN}backup kill{RST} <TARGETS>   Permanently delete specific target backups")
+    print(f"  {GREEN}backup clear{RST}            Wipe all backups to free up disk space\n")
+
+    print(f"{BOLD}Flags{GREEN}:\n")
+    print(f"  {GREEN}-h, --help{RST}             Display this help message")
+    print(f"  {GREEN}-a, --all{RST}              Target all tracked config and data files (careful: storage can go brrr)")
+    print(f"  {GREEN}-c, --configs{RST}          Target all tracked configuration files and directories")
+    print(f"  {GREEN}-d, --data{RST}             Target all tracked data directories (e.g. browsers)")
+    print(f"  {GREEN}-y, --yes{RST}              Auto-confirm all warnings during spore deployment or vial creation\n")
 
 
 def edit_config(args):
