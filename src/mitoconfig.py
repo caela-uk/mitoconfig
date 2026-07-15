@@ -92,6 +92,7 @@ def print_help():
     GREEN = "\033[32m"
     CYAN = "\033[36m"
     BOLD = "\033[1m"
+    RED = "\033[31m"
     RST = "\033[0m" # clear formatting
     EDITOR = os.environ.get('VISUAL') or os.environ.get('EDITOR') or 'nano'
 
@@ -104,14 +105,14 @@ def print_help():
     print(f"{BOLD}Mitoconfig Commands{GREEN}:\n")
     print(f"  {GREEN}tracked{RST}                View or edit your tracked file, containing all tracked config/data items")
     print(f"  {GREEN}edit{RST} <NAME>            Open a tracked shortcut (files edit with {EDITOR}, directories run cd and ls)")
-    print(f"  {GREEN}backup{RST} <TARGETS>       Create a fast and temporary backup of a tracked target")
-    print(f"  {GREEN}vial{RST} <TARGETS> [PATH]  Seal targeted tracked items into a portable {CYAN}.mito{RST} file")
-    print(f"  {GREEN}spore{RST} <PATH/URL>       Deploy a {CYAN}.mito{RST} vial, reconstructing its files onto your system\n")
+    print(f"  {GREEN}backup{RST} <TARGETS>       Create a fast and temporary backup of a tracked target                    {BOLD}{RED}[WIP]{RST}")
+    print(f"  {GREEN}vial{RST} <TARGETS> [PATH]  Seal targeted tracked items into a portable {CYAN}.mito{RST} file                    {BOLD}{RED}[WIP]{RST}")
+    print(f"  {GREEN}spore{RST} <PATH/URL>       Deploy a {CYAN}.mito{RST} vial, reconstructing its files onto your system            {BOLD}{RED}[WIP]{RST}\n")
 
     print(f"{BOLD}Backup Subcommands{GREEN}:\n")
-    print(f"  {GREEN}backup restore{RST} <TARGS>  Replace active configs/data items with their backup variants")
-    print(f"  {GREEN}backup kill{RST} <TARGETS>   Permanently delete specific target backups")
-    print(f"  {GREEN}backup clear{RST}            Wipe all backups to free up disk space\n")
+    print(f"  {GREEN}backup restore{RST} <TARGS>  Replace active configs/data items with their backup variants             {BOLD}{RED}[WIP]{RST}")
+    print(f"  {GREEN}backup kill{RST} <TARGETS>   Permanently delete specific target backups                               {BOLD}{RED}[WIP]{RST}")
+    print(f"  {GREEN}backup clear{RST}            Wipe all backups to free up disk space                                   {BOLD}{RED}[WIP]{RST}\n")
 
     print(f"{BOLD}Flags{GREEN}:\n")
     print(f"  {GREEN}-h, --help{RST}             Display this help message")
