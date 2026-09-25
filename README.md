@@ -2,11 +2,10 @@
 [![MIT License](https://img.shields.io/badge/MIT-label?style=for-the-badge&logoColor=white&label=licence&color=green)](https://github.com/caela-uk/mitoconfig/blob/main/LICENCE.md)
 ![Work in Progress](https://img.shields.io/badge/Work_in_Progress-label?style=for-the-badge&logo=linux&logoColor=white&color=red)
 
-
 **Mitoconfig** is a **work-in-progress**, open-source configuration management tool designed to make editing, backing up and reproducing/sharing configurations much easier.
 > and faster!
 
-This is a small hobby project named after the biological process of **mitosis**. It is something that I have found myself needing time and time again whilst moving between systems and Linux distributions, or just generally working on configs *(oh my, shortcuts and backups are **soooo** necessary on the daily)*
+This is a small hobby project named after the biological process of **mitosis**. It consists of a compilation of features that I have found myself needing time and time again whilst moving between systems and installations, or just generally working on configs *(oh my, shortcuts and backups are **soooo** necessary on the daily)*
 
 <details>
 <summary><h3>Mitoconfig Feature Roadmap</h3></summary>
@@ -18,13 +17,13 @@ This is a small hobby project named after the biological process of **mitosis**.
 - [x] Edit any config file with shortcuts
 - [ ] Working backup and restoration system
 - [ ] Vial/Spore functionality and .mito archive format
-- [ ] Set up compilation and building with nuitka (?)
 - [ ] Publish to the AUR
 
 ### Future (?)
 - [ ] Releases for more repositories and platforms
-- [ ] Mitosys module for reproducing package installations and more across (Linux/UNIX) systems (?)
+- [ ] Mitosys "module" for reproducing package installations and more across (Linux/UNIX) systems (?)
 - [ ] Services for automatic backups and (?) cross-system syncing
+> Take this "Future" section with a rather large portion of salt
 </details>
 
 ## Documentation/Help
@@ -65,8 +64,10 @@ In its current state, Mitoconfig is certainly not ready for actual usage and the
 
 In future it would also be great if this project could be ported to more places than just my current AUR scope.
 
+> NOTE: this project is not discontinued- I am simply slow and haven't needed to replicate my system elsewhere recently (shortcuts are nice ASF though) so those features have not been a *priority*- but I may try out Nix and decide if the scope is... well... off.
+
 ## Installation
-What? I didn't even think of that yet. Let me get back to you.
+What? I didn't even think of that yet. Let me get back to you when the AUR can think of some real goddamn security measures (no hate on them).
 
 > [!IMPORTANT]
 > This project is **entirely WIP**! During this phase, it is **guaranteed** that things will **NOT** work as expected.
