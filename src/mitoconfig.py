@@ -15,7 +15,7 @@ else:
         sys.exit("error: Python 3.11+ is required, or install 'tomli' for older versions")
 
 def getTrackedPath():
-    # returns the platforms path to tracked.toml
+    """Returns the platforms' path to tracked.toml"""
     home = Path.home()
 
     if sys.platform == "win32":
@@ -28,11 +28,10 @@ def getTrackedPath():
         return xdgConfig / "mitoconfig" / "tracked.toml"
 
 def loadTracked():
-    # parses the .toml file and returns us a dictionary
+    """Parses the .toml file and returns us a dictionary"""
     path = getTrackedPath()
 
     if not path.exists():
-        # gis an empty dict if the file isn't created yet so mitoconfig don't crash
         return {}
     try:
         with open(path, "rb") as f:
@@ -42,11 +41,10 @@ def loadTracked():
         sys.exit(1)
 
 def main():
-    # snatch those args into sum we can fw frfr
+    # snatch those args into sum we can fw
     caller = Path(sys.argv[0]).name # it's not john p, dw
     rawArgs = sys.argv[1:]
 
-    # support for the config shortcut
     if caller == "config":
         if not rawArgs: # vro wtf did you expect to happen
             printHelp()
@@ -83,8 +81,6 @@ def main():
         printHelp()
 
 def printHelp():
-    # prints this big help message - in future I should add a link to documentation
-    # tuff colours
     GREEN = "\033[32m"
     CYAN = "\033[36m"
     BOLD = "\033[1m"
@@ -118,7 +114,7 @@ def printHelp():
     print(f"  {GREEN}-y, --yes{RST}              Auto-confirm all warnings during spore deployment or vial creation\n")
 
 def editConfig(args):
-    # edit a file or open a dir by an alias or name
+    """Edit a file or open a dir by an alias or name"""
     trackedPath = getTrackedPath()
 
     if not args:
@@ -151,8 +147,7 @@ def editConfig(args):
         print(f"error: target '{targetKey}' has no path specified in tracked.toml")
         return
 
-    # bro can we normalize tildas for /home/user
-    realPath = Path(rawPath).expanduser()
+    realPath = Path(rawPath).expanduser() # tildas work now
 
     if not realPath.exists():
         print(f"error: path '{realPath}' does not exist on your machine")
@@ -166,17 +161,14 @@ def editConfig(args):
         print(f"dir: \033[32m{rawPath}\n")
         try:
             subprocess.run([shell, "-c", "ls"], cwd=realPath)
-            # hello shell
             subprocess.run([shell], cwd=realPath)
         except Exception as e:
             print(f"error: could not open shell: {e}")
 
-    # finally, a regular text file
     else:
         try:
             # open editor of choice
             subprocess.run([editor, str(realPath)], check=True)
-            # i hope people use postEdit, it's super useful
             postEdit = targetProperties.get("postEdit")
             if postEdit:
                 subprocess.run(postEdit, shell=True)
@@ -184,14 +176,12 @@ def editConfig(args):
             print(f"error: failed to edit file: {e}")
 
 def doTracked(args):
-    # edit the tracked file
     path = getTrackedPath()
 
     # newbies have it easy, haters gonna hate vro
     path.parent.mkdir(parents=True, exist_ok=True)
 
     if not path.exists():
-        # create an example if they don't have one just yet
         defaultTemplate = """# Mitoconfig Tracked File TOML Example
 # Some example use cases (change these):
 
@@ -245,6 +235,7 @@ type = "data" # could contain stream keys you wouldn't want to share, so mark it
 
 def doBackup(args):
     # quick backup, might even do data to .cache or something because it's not made to last indefinitely and should be cleared every now and then
+
     if not args:
         print("error: please specify a target")
         return
@@ -299,10 +290,8 @@ def vialUp(args):
         print("error: please specify what to vial up")
         return
 
-    # argument 0 is what we're gonna put in the vial
     target = args[0]
 
-    # argument 1 is WHERE the vial file goes
     destination = args[1] if len(args) > 1 else "./"
 
     if target in ["--all", "-a"]:
@@ -316,12 +305,11 @@ def vialUp(args):
     # currently would lack the ability to name the .mito file and would not show the .mito files path, just the parent folder
 
 def doSpore(args):
-    # open up a vial .mito file and replace your configs out with the ones in there + ofc your tracked file, possibly not full overwrite everywhere though maybe a merge (?)
+    """Open up a vial .mito file and replace your configs out with the ones in there + ofc your tracked file, possibly not full overwrite everywhere though maybe a merge (?)"""
     if not args:
         print("error: please provide a path or URL to a .mito file.")
         return
 
-    # did they use the --yes flag?
     forceYes = "--yes" in args or "-y" in args
 
     # look past the --yes flag for the path
